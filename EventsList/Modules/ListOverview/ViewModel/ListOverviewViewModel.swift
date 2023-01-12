@@ -9,8 +9,15 @@ final class ListOverviewViewModel: ListOverviewViewModelProtocol {
     
     var events: [EventModel] = []
     
+    private let eventsListService: EventsListService
+    
+    init(eventsListService: EventsListService) {
+        self.eventsListService = eventsListService
+    }
+    
     func loadData(completion: @escaping ResultHandler<[EventModel]>) {
         
+        eventsListService.loadEvents()
         // TODO: Get data from API
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) { [weak self] in
             let now = Date()

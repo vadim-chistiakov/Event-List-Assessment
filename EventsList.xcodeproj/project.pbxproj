@@ -24,6 +24,13 @@
 		96660B8C27048C2D006BAE05 /* EventDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96660B8B27048C2D006BAE05 /* EventDetailsViewModel.swift */; };
 		96660B8E27048C42006BAE05 /* EventDetailsViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96660B8D27048C42006BAE05 /* EventDetailsViewModelProtocol.swift */; };
 		96660B932704A410006BAE05 /* ListOverviewViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96660B922704A410006BAE05 /* ListOverviewViewModelTests.swift */; };
+		AE546058297090A300AD608D /* EventsListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE546057297090A300AD608D /* EventsListService.swift */; };
+		AE54605B297092E600AD608D /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54605A297092E600AD608D /* RequestMethod.swift */; };
+		AE54605D297092F300AD608D /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54605C297092F300AD608D /* HTTPClient.swift */; };
+		AE54605F297092FA00AD608D /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54605E297092FA00AD608D /* Endpoint.swift */; };
+		AE5460612970930A00AD608D /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5460602970930A00AD608D /* RequestError.swift */; };
+		AE5460652970936D00AD608D /* EventsListEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5460642970936D00AD608D /* EventsListEndpoint.swift */; };
+		AE54606A29709B1A00AD608D /* NoReply.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54606929709B1A00AD608D /* NoReply.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +75,13 @@
 		96660B8D27048C42006BAE05 /* EventDetailsViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsViewModelProtocol.swift; sourceTree = "<group>"; };
 		96660B922704A410006BAE05 /* ListOverviewViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOverviewViewModelTests.swift; sourceTree = "<group>"; };
 		96DF40BD27072D4C0008C5CA /* docs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = docs; sourceTree = "<group>"; };
+		AE546057297090A300AD608D /* EventsListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListService.swift; sourceTree = "<group>"; };
+		AE54605A297092E600AD608D /* RequestMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMethod.swift; sourceTree = "<group>"; };
+		AE54605C297092F300AD608D /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		AE54605E297092FA00AD608D /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		AE5460602970930A00AD608D /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
+		AE5460642970936D00AD608D /* EventsListEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListEndpoint.swift; sourceTree = "<group>"; };
+		AE54606929709B1A00AD608D /* NoReply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoReply.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +137,7 @@
 			children = (
 				96660B4127046720006BAE05 /* Info.plist */,
 				96660B332704671E006BAE05 /* AppDelegate.swift */,
+				AE54605429708DB800AD608D /* NetworkLayer */,
 				96660B63270469F6006BAE05 /* Core */,
 				96660B6427046A33006BAE05 /* Modules */,
 				96660B6527046A41006BAE05 /* Resources */,
@@ -262,6 +277,44 @@
 			path = tests;
 			sourceTree = "<group>";
 		};
+		AE54605429708DB800AD608D /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				AE5460632970933600AD608D /* Services */,
+				AE5460622970931A00AD608D /* Endpoints */,
+				AE546059297092D800AD608D /* Base */,
+			);
+			path = NetworkLayer;
+			sourceTree = "<group>";
+		};
+		AE546059297092D800AD608D /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				AE54605A297092E600AD608D /* RequestMethod.swift */,
+				AE54605E297092FA00AD608D /* Endpoint.swift */,
+				AE54605C297092F300AD608D /* HTTPClient.swift */,
+				AE5460602970930A00AD608D /* RequestError.swift */,
+				AE54606929709B1A00AD608D /* NoReply.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		AE5460622970931A00AD608D /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				AE5460642970936D00AD608D /* EventsListEndpoint.swift */,
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		AE5460632970933600AD608D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				AE546057297090A300AD608D /* EventsListService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -399,6 +452,7 @@
 			files = (
 				96660B6F27046DEE006BAE05 /* ListOverviewViewController.swift in Sources */,
 				96660B7D27047216006BAE05 /* ListOverviewViewModelProtocol.swift in Sources */,
+				AE54605B297092E600AD608D /* RequestMethod.swift in Sources */,
 				96660B8C27048C2D006BAE05 /* EventDetailsViewModel.swift in Sources */,
 				96660B6727046A63006BAE05 /* AppCoordinator.swift in Sources */,
 				96660B83270473FF006BAE05 /* ListOverviewViewModel.swift in Sources */,
@@ -406,8 +460,14 @@
 				96660B8627048B95006BAE05 /* EventDetailsViewController.swift in Sources */,
 				96660B342704671E006BAE05 /* AppDelegate.swift in Sources */,
 				96660B8E27048C42006BAE05 /* EventDetailsViewModelProtocol.swift in Sources */,
+				AE54605F297092FA00AD608D /* Endpoint.swift in Sources */,
+				AE54606A29709B1A00AD608D /* NoReply.swift in Sources */,
 				96660B8127047316006BAE05 /* EventModel.swift in Sources */,
+				AE54605D297092F300AD608D /* HTTPClient.swift in Sources */,
 				96660B7F2704724B006BAE05 /* Handlers.swift in Sources */,
+				AE546058297090A300AD608D /* EventsListService.swift in Sources */,
+				AE5460612970930A00AD608D /* RequestError.swift in Sources */,
+				AE5460652970936D00AD608D /* EventsListEndpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,7 +566,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -561,7 +621,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
