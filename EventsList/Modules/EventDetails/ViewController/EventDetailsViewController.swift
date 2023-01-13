@@ -22,5 +22,8 @@ final class EventDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        viewModel.loadDetails { [weak self] _ in
+//            updateUI
+        }
     }
 }

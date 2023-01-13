@@ -10,7 +10,7 @@ import Foundation
 protocol EventsListService {
     func loadEvents() async -> Result<[EventModel], RequestError>
     func loadEventDetails(id: String) async -> Result<EventDetailsModel, RequestError>
-    func buyTicket(id: String) async -> Result<NoReply, RequestError>
+    func buyTicket(id: String) async -> Result<TicketModel, RequestError>
 }
 
 struct EventsListServiceImpl: HTTPClient, EventsListService {
@@ -29,10 +29,10 @@ struct EventsListServiceImpl: HTTPClient, EventsListService {
         )
     }
     
-    func buyTicket(id: String) async -> Result<NoReply, RequestError> {
+    func buyTicket(id: String) async -> Result<TicketModel, RequestError> {
         await sendRequest(
             endpoint: EventsListEndpoint.buyTicket(id: id),
-            responseModel: NoReply.self
+            responseModel: TicketModel.self
         )
     }
 }

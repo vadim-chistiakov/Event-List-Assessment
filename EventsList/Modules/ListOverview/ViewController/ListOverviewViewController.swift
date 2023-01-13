@@ -9,7 +9,7 @@ final class ListOverviewViewController: UIViewController {
     
     private let viewModel: ListOverviewViewModelProtocol
     
-    var completion: VoidHandler?
+    var completion: TypeToVoidHandler<String>?
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -53,8 +53,10 @@ final class ListOverviewViewController: UIViewController {
 }
 
 extension ListOverviewViewController: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.events.count
+    func tableView(
+        _ tableView: UITableView, numberOfRowsInSection section: Int
+    ) -> Int {
+        viewModel.events.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -70,6 +72,7 @@ extension ListOverviewViewController: UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        completion?()
+        let eventId = viewModel.events[indexPath.row].id
+        completion?(eventId)
     }
 }

@@ -18,5 +18,5 @@ struct EventModel: Decodable {
     let id: String
     let title: String
     let price: Float
-    let date: Date
+    let date: String
 }

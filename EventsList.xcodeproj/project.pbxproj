@@ -30,7 +30,7 @@
 		AE54605F297092FA00AD608D /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54605E297092FA00AD608D /* Endpoint.swift */; };
 		AE5460612970930A00AD608D /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5460602970930A00AD608D /* RequestError.swift */; };
 		AE5460652970936D00AD608D /* EventsListEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5460642970936D00AD608D /* EventsListEndpoint.swift */; };
-		AE54606A29709B1A00AD608D /* NoReply.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54606929709B1A00AD608D /* NoReply.swift */; };
+		AEF795402971D1A5000303A2 /* TicketModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF7953F2971D1A5000303A2 /* TicketModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,7 +81,7 @@
 		AE54605E297092FA00AD608D /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		AE5460602970930A00AD608D /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 		AE5460642970936D00AD608D /* EventsListEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListEndpoint.swift; sourceTree = "<group>"; };
-		AE54606929709B1A00AD608D /* NoReply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoReply.swift; sourceTree = "<group>"; };
+		AEF7953F2971D1A5000303A2 /* TicketModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -265,6 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				96660B8927048BCD006BAE05 /* EventDetailsModel.swift */,
+				AEF7953F2971D1A5000303A2 /* TicketModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -294,7 +295,6 @@
 				AE54605E297092FA00AD608D /* Endpoint.swift */,
 				AE54605C297092F300AD608D /* HTTPClient.swift */,
 				AE5460602970930A00AD608D /* RequestError.swift */,
-				AE54606929709B1A00AD608D /* NoReply.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -456,12 +456,12 @@
 				96660B8C27048C2D006BAE05 /* EventDetailsViewModel.swift in Sources */,
 				96660B6727046A63006BAE05 /* AppCoordinator.swift in Sources */,
 				96660B83270473FF006BAE05 /* ListOverviewViewModel.swift in Sources */,
+				AEF795402971D1A5000303A2 /* TicketModel.swift in Sources */,
 				96660B8A27048BCD006BAE05 /* EventDetailsModel.swift in Sources */,
 				96660B8627048B95006BAE05 /* EventDetailsViewController.swift in Sources */,
 				96660B342704671E006BAE05 /* AppDelegate.swift in Sources */,
 				96660B8E27048C42006BAE05 /* EventDetailsViewModelProtocol.swift in Sources */,
 				AE54605F297092FA00AD608D /* Endpoint.swift in Sources */,
-				AE54606A29709B1A00AD608D /* NoReply.swift in Sources */,
 				96660B8127047316006BAE05 /* EventModel.swift in Sources */,
 				AE54605D297092F300AD608D /* HTTPClient.swift in Sources */,
 				96660B7F2704724B006BAE05 /* Handlers.swift in Sources */,
@@ -566,7 +566,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -621,7 +621,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

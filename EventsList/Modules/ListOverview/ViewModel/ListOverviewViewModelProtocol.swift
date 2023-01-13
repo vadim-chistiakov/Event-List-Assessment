@@ -6,6 +6,6 @@
 import Foundation
 
 protocol ListOverviewViewModelProtocol {
-    func loadData(completion: @escaping ResultHandler<[EventModel]>)
     var events: [EventModel] { get }
+    func loadData(completion: @escaping ResultHandler<[EventModel]>)
 }

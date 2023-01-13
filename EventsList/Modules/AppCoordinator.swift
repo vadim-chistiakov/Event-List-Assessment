@@ -22,16 +22,21 @@ final class AppCoordinator: Coordinator {
     }
     
     private func showListOverview() {
-        let vm = ListOverviewViewModel()
+        let vm = ListOverviewViewModel(
+            eventsListService: EventsListServiceImpl()
+        )
         let vc = ListOverviewViewController(viewModel: vm)
-        vc.completion = { [weak self] in
-            self?.showEventDetails()
+        vc.completion = { [weak self] eventId in
+            self?.showEventDetails(eventId: eventId)
         }
         navigationController.setViewControllers([vc], animated: false)
     }
     
-    private func showEventDetails() {
-        let vm = EventDetailsViewModel()
+    private func showEventDetails(eventId: String) {
+        let vm = EventDetailsViewModel(
+            eventsListService: EventsListServiceImpl(),
+            eventId: eventId
+        )
         let vc = EventDetailsViewController(viewModel: vm)
         navigationController.pushViewController(vc, animated: true)
     }
