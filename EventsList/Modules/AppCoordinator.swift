@@ -13,8 +13,14 @@ final class AppCoordinator: Coordinator {
     
     let navigationController: UINavigationController
     
-    init(navigationController: UINavigationController) {
+    private let assembly: AppAssembly
+    
+    init(
+        navigationController: UINavigationController,
+        assembly: AppAssembly
+    ) {
         self.navigationController = navigationController
+        self.assembly = assembly
     }
     
     func start() {
@@ -22,22 +28,15 @@ final class AppCoordinator: Coordinator {
     }
     
     private func showListOverview() {
-        let vm = ListOverviewViewModel(
-            eventsListService: EventsListServiceImpl()
-        )
-        let vc = ListOverviewViewController(viewModel: vm)
-        vc.completion = { [weak self] eventId in
+        let vc = assembly.buildListOverview(completion: { [weak self] eventId in
             self?.showEventDetails(eventId: eventId)
-        }
+        })
+
         navigationController.setViewControllers([vc], animated: false)
     }
     
     private func showEventDetails(eventId: String) {
-        let vm = EventDetailsViewModel(
-            eventsListService: EventsListServiceImpl(),
-            eventId: eventId
-        )
-        let vc = EventDetailsViewController(viewModel: vm)
+        let vс = assembly.buildEventDetails()
         navigationController.pushViewController(vc, animated: true)
     }
 }

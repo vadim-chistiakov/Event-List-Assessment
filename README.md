@@ -51,7 +51,7 @@ Documentation for API could be found in Postman collection in 'docs/EventsList.p
 
 
 ### Code refactoring tasks:
-[ ] AppCoordinator.swift creates instances of VM and VC by itself, which makes this Coordinator hard to test with mock data. Please do refactoring to make this part more clear and testable.
+[X] AppCoordinator.swift creates instances of VM and VC by itself, which makes this Coordinator hard to test with mock data. Please do refactoring to make this part more clear and testable.
 [ ] Write UnitTest for sorting/filtering logic of events overview list
 
 ## Round 2 (Nice to have)

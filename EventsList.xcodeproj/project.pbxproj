@@ -35,6 +35,7 @@
 		AE77E9092975976800F5F06D /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE77E9082975976800F5F06D /* Configurable.swift */; };
 		AE77E90C2975A0A700F5F06D /* SortingPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE77E90B2975A0A700F5F06D /* SortingPanelView.swift */; };
 		AE77E94E2979990D00F5F06D /* SortingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE77E94D2979990D00F5F06D /* SortingType.swift */; };
+		AE77E9502979AD4300F5F06D /* AppAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE77E94F2979AD4300F5F06D /* AppAssembly.swift */; };
 		AEF795402971D1A5000303A2 /* TicketModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF7953F2971D1A5000303A2 /* TicketModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +92,7 @@
 		AE77E9082975976800F5F06D /* Configurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurable.swift; sourceTree = "<group>"; };
 		AE77E90B2975A0A700F5F06D /* SortingPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortingPanelView.swift; sourceTree = "<group>"; };
 		AE77E94D2979990D00F5F06D /* SortingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortingType.swift; sourceTree = "<group>"; };
+		AE77E94F2979AD4300F5F06D /* AppAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAssembly.swift; sourceTree = "<group>"; };
 		AEF7953F2971D1A5000303A2 /* TicketModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -185,6 +187,7 @@
 		96660B6427046A33006BAE05 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				AE77E94F2979AD4300F5F06D /* AppAssembly.swift */,
 				96660B6627046A63006BAE05 /* AppCoordinator.swift */,
 				96660B6827046A8E006BAE05 /* ListOverview */,
 				96660B6927046A9A006BAE05 /* EventDetails */,
@@ -510,6 +513,7 @@
 				AE77E94E2979990D00F5F06D /* SortingType.swift in Sources */,
 				AE5460612970930A00AD608D /* RequestError.swift in Sources */,
 				AE77E90529756D2200F5F06D /* UIView+Extension.swift in Sources */,
+				AE77E9502979AD4300F5F06D /* AppAssembly.swift in Sources */,
 				AE5460652970936D00AD608D /* EventsListEndpoint.swift in Sources */,
 				AE77E90C2975A0A700F5F06D /* SortingPanelView.swift in Sources */,
 			);
