@@ -4,8 +4,13 @@
 
 import UIKit
 import SnapKit
+import Combine
 
 final class ListOverviewViewController: UIViewController {
+    
+    private enum Const {
+        static let cellId = "eventCell"
+    }
     
     private let viewModel: ListOverviewViewModelProtocol
     
@@ -13,10 +18,15 @@ final class ListOverviewViewController: UIViewController {
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
+        tableView.register(EventCell.self, forCellReuseIdentifier: Const.cellId)
         tableView.delegate = self
         tableView.dataSource = self
         return tableView
     }()
+    
+    private lazy var sortingPanel = SortingPanelView()
+    
+    private var cancellables = Set<AnyCancellable>()
     
     init(viewModel: ListOverviewViewModelProtocol) {
         self.viewModel = viewModel
@@ -29,27 +39,37 @@ final class ListOverviewViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setupUI()
         setupLayout()
-        
-        viewModel.loadData { [weak self] result in
-            if case Result.success = result {
+        viewModel.loadData { [weak self] in
+            self?.tableView.reloadData()
+        }
+        sortingPanel
+            .subscribe()
+            .sink { [weak self] actionType in
+                self?.viewModel.didTapSort(with: actionType)
                 self?.tableView.reloadData()
             }
-        }
+            .store(in: &cancellables)
     }
     
     private func setupUI() {
         view.backgroundColor = .white
-        view.addSubview(tableView)
+        view.addSubviews([tableView, sortingPanel])
     }
     
     private func setupLayout() {
+        sortingPanel.snp.makeConstraints {
+            $0.leading.trailing.equalToSuperview().inset(16)
+            $0.top.equalTo(view.safeAreaLayoutGuide)
+            $0.height.equalTo(64)
+        }
         tableView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+            $0.top.equalTo(sortingPanel.snp.bottom)
+            $0.leading.trailing.bottom.equalToSuperview()
         }
     }
+    
 }
 
 extension ListOverviewViewController: UITableViewDataSource, UITableViewDelegate {
@@ -59,15 +79,13 @@ extension ListOverviewViewController: UITableViewDataSource, UITableViewDelegate
         viewModel.events.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellId = "eventCell"
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId) ?? UITableViewCell(style: .subtitle, reuseIdentifier: cellId)
-        
+    func tableView(
+        _ tableView: UITableView,
+        cellForRowAt indexPath: IndexPath
+    ) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Const.cellId, for: indexPath) as? EventCell else { return .init() }
         let model = viewModel.events[indexPath.row]
-        cell.textLabel?.text = model.title
-        // TODO: Use proper date formatting
-        cell.detailTextLabel?.text = model.date.description
-        
+        cell.configure(viewModel: model)
         return cell
     }
     

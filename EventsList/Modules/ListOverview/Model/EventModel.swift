@@ -12,11 +12,12 @@ struct EventModel: Decodable {
         case title = "event"
         case price = "ticketPrice"
         case date
-
+        case formattedDate
     }
     
     let id: String
     let title: String
     let price: Float
     let date: String
+    let formattedDate: Date?
 }

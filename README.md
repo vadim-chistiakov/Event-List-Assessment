@@ -44,10 +44,10 @@ Documentation for API could be found in Postman collection in 'docs/EventsList.p
 ## Round 1 (Must have)
 
 ### Business logic tasks:
-[ ] implement backend communication instead of MOCK samples (see Postman collection for reference)
-[ ] fix date formatting on overview page to the following format: "05 August 2021"
-[ ] show price value for each event
-[ ] implement sorting by date and by price for overview screen
+[Х] implement backend communication instead of MOCK samples (see Postman collection for reference)
+[Х] fix date formatting on overview page to the following format: "05 August 2021"
+[Х] show price value for each event
+[Х] implement sorting by date and by price for overview screen
 
 
 ### Code refactoring tasks:
@@ -57,7 +57,7 @@ Documentation for API could be found in Postman collection in 'docs/EventsList.p
 ## Round 2 (Nice to have)
 
 ### Business logic tasks:
-[ ] implement logic of filtering only upcoming events (events which are older than today do not show in the list)
+[Х] implement logic of filtering only upcoming events (events which are older than today do not show in the list)
 [ ] implement event details screen
 
 ### Code refactoring tasks:

@@ -30,6 +30,11 @@
 		AE54605F297092FA00AD608D /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54605E297092FA00AD608D /* Endpoint.swift */; };
 		AE5460612970930A00AD608D /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5460602970930A00AD608D /* RequestError.swift */; };
 		AE5460652970936D00AD608D /* EventsListEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5460642970936D00AD608D /* EventsListEndpoint.swift */; };
+		AE77E90229756CBC00F5F06D /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE77E90129756CBC00F5F06D /* EventCell.swift */; };
+		AE77E90529756D2200F5F06D /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE77E90429756D2200F5F06D /* UIView+Extension.swift */; };
+		AE77E9092975976800F5F06D /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE77E9082975976800F5F06D /* Configurable.swift */; };
+		AE77E90C2975A0A700F5F06D /* SortingPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE77E90B2975A0A700F5F06D /* SortingPanelView.swift */; };
+		AE77E94E2979990D00F5F06D /* SortingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE77E94D2979990D00F5F06D /* SortingType.swift */; };
 		AEF795402971D1A5000303A2 /* TicketModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF7953F2971D1A5000303A2 /* TicketModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +86,11 @@
 		AE54605E297092FA00AD608D /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		AE5460602970930A00AD608D /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 		AE5460642970936D00AD608D /* EventsListEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListEndpoint.swift; sourceTree = "<group>"; };
+		AE77E90129756CBC00F5F06D /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
+		AE77E90429756D2200F5F06D /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		AE77E9082975976800F5F06D /* Configurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurable.swift; sourceTree = "<group>"; };
+		AE77E90B2975A0A700F5F06D /* SortingPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortingPanelView.swift; sourceTree = "<group>"; };
+		AE77E94D2979990D00F5F06D /* SortingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortingType.swift; sourceTree = "<group>"; };
 		AEF7953F2971D1A5000303A2 /* TicketModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -137,6 +147,7 @@
 			children = (
 				96660B4127046720006BAE05 /* Info.plist */,
 				96660B332704671E006BAE05 /* AppDelegate.swift */,
+				AE77E90329756D0F00F5F06D /* Helpers */,
 				AE54605429708DB800AD608D /* NetworkLayer */,
 				96660B63270469F6006BAE05 /* Core */,
 				96660B6427046A33006BAE05 /* Modules */,
@@ -194,6 +205,8 @@
 		96660B6827046A8E006BAE05 /* ListOverview */ = {
 			isa = PBXGroup;
 			children = (
+				AE77E90A2975A07B00F5F06D /* Views */,
+				AE77E90029756C9700F5F06D /* Cell */,
 				96660B6D27046DD7006BAE05 /* Model */,
 				96660B6C27046DCE006BAE05 /* ViewModel */,
 				96660B6B27046DC8006BAE05 /* ViewController */,
@@ -240,6 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				96660B8027047316006BAE05 /* EventModel.swift */,
+				AE77E94D2979990D00F5F06D /* SortingType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -313,6 +327,31 @@
 				AE546057297090A300AD608D /* EventsListService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		AE77E90029756C9700F5F06D /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				AE77E90129756CBC00F5F06D /* EventCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		AE77E90329756D0F00F5F06D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				AE77E90429756D2200F5F06D /* UIView+Extension.swift */,
+				AE77E9082975976800F5F06D /* Configurable.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		AE77E90A2975A07B00F5F06D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AE77E90B2975A0A700F5F06D /* SortingPanelView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -453,6 +492,8 @@
 				96660B6F27046DEE006BAE05 /* ListOverviewViewController.swift in Sources */,
 				96660B7D27047216006BAE05 /* ListOverviewViewModelProtocol.swift in Sources */,
 				AE54605B297092E600AD608D /* RequestMethod.swift in Sources */,
+				AE77E9092975976800F5F06D /* Configurable.swift in Sources */,
+				AE77E90229756CBC00F5F06D /* EventCell.swift in Sources */,
 				96660B8C27048C2D006BAE05 /* EventDetailsViewModel.swift in Sources */,
 				96660B6727046A63006BAE05 /* AppCoordinator.swift in Sources */,
 				96660B83270473FF006BAE05 /* ListOverviewViewModel.swift in Sources */,
@@ -466,8 +507,11 @@
 				AE54605D297092F300AD608D /* HTTPClient.swift in Sources */,
 				96660B7F2704724B006BAE05 /* Handlers.swift in Sources */,
 				AE546058297090A300AD608D /* EventsListService.swift in Sources */,
+				AE77E94E2979990D00F5F06D /* SortingType.swift in Sources */,
 				AE5460612970930A00AD608D /* RequestError.swift in Sources */,
+				AE77E90529756D2200F5F06D /* UIView+Extension.swift in Sources */,
 				AE5460652970936D00AD608D /* EventsListEndpoint.swift in Sources */,
+				AE77E90C2975A0A700F5F06D /* SortingPanelView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
