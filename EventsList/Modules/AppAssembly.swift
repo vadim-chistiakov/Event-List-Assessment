@@ -5,16 +5,16 @@
 //  Created by Vadim Chistiakov on 19.01.2023.
 //
 
-import Foundation
+import UIKit
 
-protocol AppAssemby {
-    func buildListOverview(completion: (String) -> Void) -> UIViewController
-    func buildEventDetails() -> UIViewController
+protocol AppAssembly {
+    func buildListOverview(completion: @escaping (String) -> Void) -> UIViewController
+    func buildEventDetails(eventId: String) -> UIViewController
 }
 
-final class AppAssemblyImpl: AppAssemby {
+final class AppAssemblyImpl: AppAssembly {
     
-    func buildListOverview(completion: (String) -> Void) -> UIViewController {
+    func buildListOverview(completion: @escaping (String) -> Void) -> UIViewController {
         let vm = ListOverviewViewModel(
             eventsListService: EventsListServiceImpl()
         )
@@ -23,7 +23,7 @@ final class AppAssemblyImpl: AppAssemby {
         return vc
     }
     
-    func buildEventDetails() -> UIViewController {
+    func buildEventDetails(eventId: String) -> UIViewController {
         let vm = EventDetailsViewModel(
             eventsListService: EventsListServiceImpl(),
             eventId: eventId

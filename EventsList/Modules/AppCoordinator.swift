@@ -36,7 +36,7 @@ final class AppCoordinator: Coordinator {
     }
     
     private func showEventDetails(eventId: String) {
-        let vс = assembly.buildEventDetails()
+        let vc = assembly.buildEventDetails(eventId: eventId)
         navigationController.pushViewController(vc, animated: true)
     }
 }

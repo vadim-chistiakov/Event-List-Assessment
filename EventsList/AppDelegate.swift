@@ -17,7 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navigationController = UINavigationController()
         screenWindow.rootViewController = navigationController
         
-        let coord = AppCoordinator(navigationController: navigationController)
+        let coord = AppCoordinator(
+            navigationController: navigationController,
+            assembly: AppAssemblyImpl()
+        )
         coord.start()
         
         appCoordinator = coord
