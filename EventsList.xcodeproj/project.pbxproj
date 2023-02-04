@@ -24,11 +24,9 @@
 		96660B8C27048C2D006BAE05 /* EventDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96660B8B27048C2D006BAE05 /* EventDetailsViewModel.swift */; };
 		96660B8E27048C42006BAE05 /* EventDetailsViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96660B8D27048C42006BAE05 /* EventDetailsViewModelProtocol.swift */; };
 		96660B932704A410006BAE05 /* ListOverviewViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96660B922704A410006BAE05 /* ListOverviewViewModelTests.swift */; };
+		AE1C7E01298EE93A00362448 /* EasyNetwork in Frameworks */ = {isa = PBXBuildFile; productRef = AE1C7E00298EE93A00362448 /* EasyNetwork */; };
 		AE546058297090A300AD608D /* EventsListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE546057297090A300AD608D /* EventsListService.swift */; };
-		AE54605B297092E600AD608D /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54605A297092E600AD608D /* RequestMethod.swift */; };
-		AE54605D297092F300AD608D /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54605C297092F300AD608D /* HTTPClient.swift */; };
 		AE54605F297092FA00AD608D /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54605E297092FA00AD608D /* Endpoint.swift */; };
-		AE5460612970930A00AD608D /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5460602970930A00AD608D /* RequestError.swift */; };
 		AE5460652970936D00AD608D /* EventsListEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5460642970936D00AD608D /* EventsListEndpoint.swift */; };
 		AE77E90229756CBC00F5F06D /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE77E90129756CBC00F5F06D /* EventCell.swift */; };
 		AE77E90529756D2200F5F06D /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE77E90429756D2200F5F06D /* UIView+Extension.swift */; };
@@ -82,10 +80,7 @@
 		96660B922704A410006BAE05 /* ListOverviewViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOverviewViewModelTests.swift; sourceTree = "<group>"; };
 		96DF40BD27072D4C0008C5CA /* docs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = docs; sourceTree = "<group>"; };
 		AE546057297090A300AD608D /* EventsListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListService.swift; sourceTree = "<group>"; };
-		AE54605A297092E600AD608D /* RequestMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMethod.swift; sourceTree = "<group>"; };
-		AE54605C297092F300AD608D /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		AE54605E297092FA00AD608D /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
-		AE5460602970930A00AD608D /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 		AE5460642970936D00AD608D /* EventsListEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListEndpoint.swift; sourceTree = "<group>"; };
 		AE77E90129756CBC00F5F06D /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		AE77E90429756D2200F5F06D /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
@@ -102,6 +97,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				96660B7227046E29006BAE05 /* SnapKit in Frameworks */,
+				AE1C7E01298EE93A00362448 /* EasyNetwork in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,10 +304,7 @@
 		AE546059297092D800AD608D /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				AE54605A297092E600AD608D /* RequestMethod.swift */,
 				AE54605E297092FA00AD608D /* Endpoint.swift */,
-				AE54605C297092F300AD608D /* HTTPClient.swift */,
-				AE5460602970930A00AD608D /* RequestError.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -375,6 +368,7 @@
 			name = EventsList;
 			packageProductDependencies = (
 				96660B7127046E29006BAE05 /* SnapKit */,
+				AE1C7E00298EE93A00362448 /* EasyNetwork */,
 			);
 			productName = EventsList;
 			productReference = 96660B302704671E006BAE05 /* EventsList.app */;
@@ -449,6 +443,7 @@
 			mainGroup = 96660B272704671E006BAE05;
 			packageReferences = (
 				96660B7027046E29006BAE05 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				AE1C7DFF298EE93A00362448 /* XCRemoteSwiftPackageReference "EasyNetwork" */,
 			);
 			productRefGroup = 96660B312704671E006BAE05 /* Products */;
 			projectDirPath = "";
@@ -494,7 +489,6 @@
 			files = (
 				96660B6F27046DEE006BAE05 /* ListOverviewViewController.swift in Sources */,
 				96660B7D27047216006BAE05 /* ListOverviewViewModelProtocol.swift in Sources */,
-				AE54605B297092E600AD608D /* RequestMethod.swift in Sources */,
 				AE77E9092975976800F5F06D /* Configurable.swift in Sources */,
 				AE77E90229756CBC00F5F06D /* EventCell.swift in Sources */,
 				96660B8C27048C2D006BAE05 /* EventDetailsViewModel.swift in Sources */,
@@ -507,11 +501,9 @@
 				96660B8E27048C42006BAE05 /* EventDetailsViewModelProtocol.swift in Sources */,
 				AE54605F297092FA00AD608D /* Endpoint.swift in Sources */,
 				96660B8127047316006BAE05 /* EventModel.swift in Sources */,
-				AE54605D297092F300AD608D /* HTTPClient.swift in Sources */,
 				96660B7F2704724B006BAE05 /* Handlers.swift in Sources */,
 				AE546058297090A300AD608D /* EventsListService.swift in Sources */,
 				AE77E94E2979990D00F5F06D /* SortingType.swift in Sources */,
-				AE5460612970930A00AD608D /* RequestError.swift in Sources */,
 				AE77E90529756D2200F5F06D /* UIView+Extension.swift in Sources */,
 				AE77E9502979AD4300F5F06D /* AppAssembly.swift in Sources */,
 				AE5460652970936D00AD608D /* EventsListEndpoint.swift in Sources */,
@@ -687,7 +679,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = EventsList/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -708,7 +700,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = EventsList/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -851,6 +843,14 @@
 				minimumVersion = 5.0.1;
 			};
 		};
+		AE1C7DFF298EE93A00362448 /* XCRemoteSwiftPackageReference "EasyNetwork" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/vadim-chistiakov/EasyNetwork";
+			requirement = {
+				kind = exactVersion;
+				version = 1.0.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -858,6 +858,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 96660B7027046E29006BAE05 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		AE1C7E00298EE93A00362448 /* EasyNetwork */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AE1C7DFF298EE93A00362448 /* XCRemoteSwiftPackageReference "EasyNetwork" */;
+			productName = EasyNetwork;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

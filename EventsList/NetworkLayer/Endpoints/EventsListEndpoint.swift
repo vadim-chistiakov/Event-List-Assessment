@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import EasyNetwork
 
 enum EventsListEndpoint {
     case events

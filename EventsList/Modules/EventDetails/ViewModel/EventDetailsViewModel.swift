@@ -30,7 +30,7 @@ final class EventDetailsViewModel: EventDetailsViewModelProtocol {
                 self.event = success
                 completion(.success(()))
             case .failure(let failure):
-                print(failure.customMessage)
+                print(failure)
             }
         }
     }
@@ -43,7 +43,7 @@ final class EventDetailsViewModel: EventDetailsViewModelProtocol {
                 self.ticket = success
                 completion(.success(()))
             case .failure(let failure):
-                print(failure.customMessage)
+                print(failure)
             }
         }
     }

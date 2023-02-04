@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import EasyNetwork
 
 protocol EventsListService {
     func loadEvents() async -> Result<[EventModel], RequestError>
@@ -13,26 +14,26 @@ protocol EventsListService {
     func buyTicket(id: String) async -> Result<TicketModel, RequestError>
 }
 
-struct EventsListServiceImpl: HTTPClient, EventsListService {
+struct EventsListServiceImpl: EasyNetworkClient, EventsListService {
     
     func loadEvents() async -> Result<[EventModel], RequestError> {
         await sendRequest(
             endpoint: EventsListEndpoint.events,
-            responseModel: [EventModel].self
+            responseModelType: [EventModel].self
         )
     }
     
     func loadEventDetails(id: String) async -> Result<EventDetailsModel, RequestError> {
         await sendRequest(
             endpoint: EventsListEndpoint.event(id: id),
-            responseModel: EventDetailsModel.self
+            responseModelType: EventDetailsModel.self
         )
     }
     
     func buyTicket(id: String) async -> Result<TicketModel, RequestError> {
         await sendRequest(
             endpoint: EventsListEndpoint.buyTicket(id: id),
-            responseModel: TicketModel.self
+            responseModelType: TicketModel.self
         )
     }
 }

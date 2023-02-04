@@ -28,7 +28,7 @@ final class ListOverviewViewModel: ListOverviewViewModelProtocol {
                     completion()
                 }
             case .failure(let failure):
-                print(failure.customMessage)
+                print(failure)
             }
         }
     }
